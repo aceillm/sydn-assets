@@ -1,94 +1,101 @@
 @keyframes fade {
-    0% {
-        opacity: 1; /* Opacité maximale au départ */
-    }
+  0% {
+    opacity: 1; /* Opacité maximale au départ */
+  }
   50% {
-        opacity: 0.5; /* Opacité minimale à la fin */
-    }
-    100% {
-        opacity: 1; /* Opacité minimale à la fin */
-    }
+    opacity: 0.5; /* Opacité minimale à la fin */
+  }
+  100% {
+    opacity: 1; /* Opacité minimale à la fin */
+  }
 }
 
 cam:before {
-content:"\e000";
-font-family:"Miscellaneous";
-color:var(--darkneutral);
-padding-right:10px
+  content: "\e000";
+  font-family: "Miscellaneous";
+  color: var(--darkneutral);
+  padding-right: 10px;
 }
 
 cam {
-padding:10px;
-border-radius:5px;
-background-color:var(--light);
-border:var(--border);
-color:var(--cmh);
-font-family:var(--font5);
-font-size:var(--normal-size);
-display:block;
-margin:10px 10px -10px
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--light);
+  border: var(--border);
+  color: var(--cmh);
+  font-family: var(--font5);
+  font-size: var(--normal-size);
+  display: block;
+  margin: 10px 10px -10px;
 }
 
 .plcam .codebox {
-    width:100%
+  width: 100%;
 }
- .plcam .codebox dd{
-    border-radius:0px;
-    padding:0px!important;
-    background-color:transparent!important
+.plcam .codebox dd {
+  border-radius: 0px;
+  padding: 0px !important;
+  background-color: transparent !important;
 }
- .plcam .spoiler_content{
-    outline: 9px solid var(--background1);
-    border: 1px solid var(--cmh);
-    margin: 10px;
-    padding: 10px!important;
-    font-family: var(--font2);
-    border-radius: 10px!important;
+.plcam .spoiler_content {
+  outline: 9px solid var(--background1);
+  border: 1px solid var(--cmh);
+  margin: 10px;
+  padding: 10px !important;
+  font-family: var(--font2);
+  border-radius: 10px !important;
 }
- .plcam {
-    font-size: var(--little-size) !important
+.plcam {
+  font-size: var(--little-size) !important;
 }
- .plcam .imgfo {
-    float: left;
-    height: 110px;
-    margin: 0px 12px;
+.plcam .imgfo {
+  float: left;
+  height: 110px;
+  margin: 0px 12px;
 }
- .plcam t2 {background-color: var(--cmh) !important
+.plcam t2 {
+  background-color: var(--cmh) !important;
 }
- .plcam {
+.plcam {
 }
 
 .post_profile.user-id-u4 .profil_content a,
 .post_profile.user-id-u110 .profil_content a,
 .post_profile.user-id-u146 .profil_content a,
-.post_profile.user-id-u163 .profil_content a {color:var(--cmh) !important;
-font-weight: 200}
+.post_profile.user-id-u163 .profil_content a {
+  color: var(--cmh) !important;
+  font-weight: 200;
+}
 
 .post_profile.user-id-u4 .profil_content img,
 .post_profile.user-id-u110 .profil_content img,
 .post_profile.user-id-u163 .profil_content img,
-.post_profile.user-id-u146 .profil_content img {border-radius: 50%;
-height: 100px;
-width: 100px;
-outline: 5px solid var(--background1);
-margin-left: 70px;
-padding: 4px;
-border: 1px solid var(--cmh);
-object-fit: cover !important;
-animation: fade 5s ease infinite;
+.post_profile.user-id-u146 .profil_content img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  outline: 5px solid var(--background1);
+  margin-left: 70px;
+  padding: 4px;
+  border: 1px solid var(--cmh);
+  object-fit: cover !important;
+  animation: fade 5s ease infinite;
 }
 
 .post_profile.user-id-u4 .infos-posteur.label-undefined .profil_content img,
 .post_profile.user-id-u110 .infos-posteur.label-undefined .profil_content img,
 .post_profile.user-id-u163 .infos-posteur.label-undefined .profil_content img,
-.post_profile.user-id-u146 .infos-posteur.label-undefined .profil_content img {border-radius: 10px !important;
-width: 150px !important;
-margin-left: 45px !important;
+.post_profile.user-id-u146 .infos-posteur.label-undefined .profil_content img {
+  border-radius: 10px !important;
+  width: 150px !important;
+  margin-left: 45px !important;
 }
 
 .post_profile.user-id-u4 .profil_content h4,
 .post_profile.user-id-u110 .profil_content h4,
 .post_profile.user-id-u146 .profil_content h4,
-.post_profile.user-id-u163 .profil_content h4 {display: inline;
-font-weight: 200;
-letter-spacing: 2px;}
+.post_profile.user-id-u163 .profil_content h4 {
+  display: inline;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
