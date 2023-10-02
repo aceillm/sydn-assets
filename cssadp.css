@@ -1,3 +1,15 @@
+@keyframes fade {
+    0% {
+        opacity: 1; /* Opacité maximale au départ */
+    }
+  50% {
+        opacity: 0.5; /* Opacité minimale à la fin */
+    }
+    100% {
+        opacity: 1; /* Opacité minimale à la fin */
+    }
+}
+
 cam:before {
 content:"\e000";
 font-family:"Miscellaneous";
