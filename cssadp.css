@@ -41,7 +41,7 @@ margin:10px 10px -10px
     height: 110px;
     margin: 0px 12px;
 }
- .plcam {
+ .plcam td {background-color: var(--cmh) !important
 }
  .plcam {
 }
