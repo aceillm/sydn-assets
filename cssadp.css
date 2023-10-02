@@ -10,6 +10,16 @@
   }
 }
 
+m25 {margin-left: 25px}
+m50 {margin-left: 50px}
+m75 {margin-left: 75px}
+m100 {margin-left: 100px}
+
+.plcam.fam t2 {padding: 0px 5px !important; background-color: var(--acc4);line-height: 25px;}
+.plcam.fam  .box a {color: var(--mixacc) !important}
+
+.plcam.fam  c3 {font-weight: 100}
+
 cam:before {
   content: "\e000";
   font-family: "Miscellaneous";
