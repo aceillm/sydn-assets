@@ -1,0 +1,313 @@
+/*** ------------------------------- ***/
+/*** SWITCHEROO - Par Monomer ------ ***/
+/*** Gestionnaire de multicompte --- ***/
+:root {
+--link: #000;
+--grey: #F4F4F4;
+--greyer: #E5E5E5;
+--gap-size: 10px;
+--ease: cubic-bezier(0.4, 0.0, 0.2, 1);
+--ease-bounce: cubic-bezier(0.43, 0.09, 0.38, 2.56);
+}
+
+/* BARRE SWITCHEROO --- */
+.switcheroo {}
+
+.switcheroo[position="static"] {
+position: relative;
+}
+
+/* si barre EN HAUT */
+.switcheroo[position="top"] {
+position: fixed;
+top: 42;
+left: 0;
+z-index: 100;
+}
+
+/* si barre A LA VERTICAL */
+.switcheroo[direction="vertical"] {
+height: 100%;
+}
+
+/* Positionnement des ronds */
+.switcheroo__squircles {
+display: flex;
+margin: 0;
+padding: 0;
+list-style: none;
+padding: 20px;
+gap: 20px;
+}
+
+.switcheroo[direction="vertical"] .switcheroo__squircles {
+flex-direction: column;
+}
+
+/* BARRE --- */
+.switcheroo {
+color: var(--color-text);
+font-size: var(--medium);
+}
+
+/* AFFICHAGE DES COMPTES ---*/
+/* Rond */
+.switcheroo__squircle {
+position: relative;
+display: grid;
+place-items: center;
+background-color: var(--grey);
+width: 50px;
+height: 50px;
+border-radius: 50%;
+cursor: pointer;
+transition: border-radius 128ms var(--ease);
+}
+
+/* Rond au survol */
+.switcheroo__squircle:hover {
+border-radius: 10px;
+background: var(--greyer);
+}
+
+/* Contenenur de l'avatar */
+.switcheroo__avatar {}
+
+/* Image de l'avatar */
+.switcheroo__avatar img {
+width: 50px;
+height: 50px;
+object-fit: cover;
+object-position: center;
+border-radius: 50%;
+transition: border-radius 128ms var(--ease);
+position: relative;
+}
+
+/* Image de l'avatar au survol */
+.switcheroo__avatar img:hover {
+border-radius: 10px;
+}
+
+/* Avatar du compte connecté */
+.switcheroo__squircle.active, .switcheroo__squircle.active img {
+border-radius: 10px;
+cursor: default;
+}
+
+/* Bouton de suppression */
+.switcheroo__delete {
+display: grid;
+place-items: center;
+position: absolute;
+width: 23px;
+top: -7px;
+right: -7px;
+border-radius: 50%;
+background-color: var(--co2);
+transform: scale(0);
+opacity: 1;
+transition: transform 128ms var(--ease), opacity 64ms var(--ease);
+cursor: pointer;
+color: var(--light);
+}
+
+.switcheroo__squircle:hover .switcheroo__delete {
+opacity: 1;
+transform: scale(1);
+}
+
+/* TOOLTIP - INFOBULLE DU PSEUDO ---*/
+/* Conteneur du pseudo */
+.switcheroo__popper {
+background-color: var(--co2);
+padding: 10px;
+text-transform: uppercase;
+font-weight: 300;
+letter-spacing: 1px;
+position: absolute;
+width: -webkit-max-content;
+width: max-content;
+border-radius: 10px;
+z-index: 0;
+opacity: 0;
+transition: opacity 64ms var(--ease), transform 128ms var(--ease-bounce);
+pointer-events: none;
+color: #fff;
+}
+
+/* Conteneur du pseudo: si vertical */
+.switcheroo[direction="vertical"] .switcheroo__popper {
+left: 155%;
+top: 50%;
+transform-origin: left;
+transform: translateY(-50%) scale(0.98);
+}
+
+/* Flèche tooltip */
+.switcheroo__popper:before {
+content: "";
+position: absolute;
+width: 24px;
+height: 24px;
+background-color: var(--co2);
+z-index: -1;
+}
+
+/* Flèche tooltip : si vertical */
+.switcheroo[direction="vertical"] .switcheroo__popper:before {
+left: -2px;
+top: 50%;
+transform: translateY(-50%) rotate(-45deg);
+}
+
+/* Positionnement tooltip au survol */
+.switcheroo[direction="vertical"] .switcheroo__squircle:hover .switcheroo__popper {
+opacity: 1;
+transform: translateY(-50%) scale(1);
+}
+
+/* LOGO --- */
+.switcheroo__logo {
+/* display: none */
+/* à ajouter si vous voulez supprimer le logo*/
+}
+
+/* DIVIDER : barre de séparation --- */
+.switcheroo__divider {
+/* display: none */
+/* à ajouter si vous voulez supprimer le logo*/
+background-color: var(--greyer);
+border-radius: 3px;
+transform: scale(0.8);
+}
+
+/* Divider : si vertical */
+.switcheroo[direction="vertical"] .switcheroo__divider {
+width: 100%;
+height: 2px;
+}
+
+/* AJOUTER UN COMPTE ---*/
+/* button : ajouter un compte */
+.switcheroo__squircle--button {
+transition: border-radius 128ms var(--ease);
+color: var(--lightdark);
+}
+
+/* MODAL : FENETRE DE CONNEXION --- */
+/* Fond de l'afficage connexion */
+.monomer-overlay {
+position: fixed;
+z-index: 999;
+top: 0;
+left: 0;
+opacity: 0;
+width: 100%;
+height: 100%;
+transition: 0.2s opacity ease;
+background: rgba(255, 255, 255, 0.6);
+}
+
+/* Boîte de connexion */
+.monomer-modal {
+position: fixed;
+z-index: 999;
+top: 50%;
+left: 50%;
+opacity: 0;
+width: 94%;
+padding: 24px 20px;
+transition: 0.2s opacity ease;
+transform: translate(-50%, -50%);
+border-radius: 5px;
+background: var(--grey);
+border: var(--border);
+color: var(--lightdark);
+}
+
+/* Formulaire */
+.switcheroo__form {
+padding: 48px;
+background: var(--light);
+border-radius: 5px;
+}
+
+/* Champs à remplir */
+.switcheroo__form-row {
+display: flex;
+flex-flow: column;
+align-items: flex-start;
+margin-bottom: 16px;
+}
+
+/* Nom du champs */
+.switcheroo__form-label {
+margin-bottom: 8px;
+font-size: 14px;
+text-transform: uppercase;
+font-weight: 600;
+}
+
+/* Zone de texte */
+.switcheroo__form-input {
+padding: 6px;
+font-size: 16px;
+border-radius: 4px;
+width: 100%;
+background-color: var(--light);
+border: var(--border) !important;
+border-bottom: 3px solid var(--greyer) !important;
+color: var(--lightdark);
+cursor: text;
+}
+
+/* Bouton de connexion */
+.switcheroo__form-button {
+border-radius: 8px;
+padding: 4px 6px;
+border: none;
+outline: none;
+box-shadow: none;
+text-transform: uppercase;
+font-size: 14px;
+align-self: flex-end;
+background-color: var(--light);
+border: var(--border);
+cursor: pointer;
+}
+
+.switcheroo__form-button:hover {
+border: 1px solid transparent;
+background: var(--lightdark);
+color: var(--light);
+}
+
+.monomer-modal.monomer-open, .monomer-overlay.monomer-open {
+opacity: 1;
+}
+
+/* Fermer la boîte de connexion */
+.monomer-close {
+font-size: 20px;
+display: grid;
+place-items: center;
+width: 24px;
+height: 24px;
+position: absolute;
+top: -7px;
+right: -7px;
+padding: 5px;
+cursor: pointer;
+color: #fff;
+border: 0;
+outline: none;
+background: var(--co2);
+border-radius: 50%;
+padding: 0;
+}
+
+.monomer-close:hover {
+background: var(--lightdark);
+font-weight: 700;
+}
