@@ -1,0 +1,5 @@
+#fa_right.welcome #fa_menu #fa_welcome {background-color: var(--light)}
+
+#fa_right a.rightHeaderLink, #fa_menu #fa_welcome {border-radius: 10px}
+
+#fa_menulist {background-color: var(--light); box-shadow: 0 0 0 0;     line-height: 35px;padding:10px 10px 10px 198px;border-radius: 10px}
